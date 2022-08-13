@@ -1,0 +1,361 @@
+
+
+/* 全局样式 */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html,body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7em;
+    background-color:#e8eaef;  
+    height:107vh;
+    
+}
+
+/* 通用样式 */
+.container{
+    margin:0 auto;
+    height: 55px;
+    overflow:hidden;
+    padding: 10px;
+
+}
+
+
+/* 导航栏定义 */
+#navbar{
+    /* 设置盒子的底色和透明度 */
+background-color: rgba(255,255,255,0.9);
+color:#333;
+overflow: auto;
+width:100%;
+/* 固定住导航栏 */
+position:fixed;
+box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.111) ;
+
+}
+
+
+
+/* 定义设置 */
+#navbar .container a{
+display:block;
+float: right;
+margin-right: -150px ;
+
+}
+#navbar .container h3{
+float:right;
+margin-right: 70px ;
+margin-top: 5px;
+
+}
+/* 定义导航栏头像大小 */
+#navbar .container img{
+display:block;
+width: 45px;
+height: 45px;
+margin-top:-4px;
+margin-right:9px;
+float: right;
+border-radius: 50%;
+}
+/* 定义菜单栏 */
+.menu{
+position:fixed;
+top:  9px;
+right:53px;
+z-index: 1;
+}
+.menu .toggler{
+position:absolute;
+top:0;
+left:0;
+z-index: 2;
+/* 设置鼠标样式 */
+cursor:pointer;
+width:40px;
+height:40px;
+opacity: 0;
+}
+.menu .hamburger{
+position:absolute;
+top: 0;
+left:0;
+z-index:1;
+width:30px;
+height:40px;
+/* background:rgba(13, 110, 139, 0.75); */
+display: flex;
+justify-content:center;
+align-items: center;
+}
+.menu .hamburger > div{
+position: relative;
+flex: none;
+width: 100%;
+height: 2px;
+background: #333;
+transition: all 0.4s ease;
+}
+
+/* 设置线 */
+.menu .hamburger > div:before,
+.menu .hamburger > div:after{
+content: '';
+position: absolute;
+z-index: 1;
+background: #333;
+width: 100%;
+height: 2px;
+top: -10px;
+}
+.menu .hamburger > div:after{
+top: 10px;
+}
+
+/* 设置线的动漫  当我们点击到toggler 就会影响到它同级的元素hamburger中的div*/
+.menu .toggler:checked + .hamburger > div {
+    transform:rotate(135deg)
+    }
+    .menu .toggler:checked + .hamburger > div:before,
+    .menu .toggler:checked + .hamburger > div:after{
+    /* 其实就是把他们起始位置弄成一致，这样它又变才一条线了,最终旋转形成一个x字形 */
+    top: 0;
+    transform: rotate(90deg);
+    }
+    .menu .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+    }
+/* 下拉框内容 */
+.menu .toggler:checked ~.menu-2{
+visibility:visible;
+}
+.menu .menu-2{
+position:absolute;
+top: 50px;
+right: -40px;
+width: 100px;
+height: 110px;
+visibility: hidden;
+/* background:red; */
+
+}
+.menu .menu-2 a{
+text-decoration: none;
+color:#333;
+padding: 10px 40px;
+background:#eef0f1;
+}
+.menu .menu-2 a:hover{
+color:#FFF;
+background:#76c1fc;
+}
+.menu .menu-2 a.back{
+/* 设置两个圆角 */
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.menu .menu-2  ul{
+list-style:none;
+position:absolute;
+right: 75px;
+top:-22px;
+}
+.menu .menu-2  ul li ul li{
+padding-top: 40px;
+}
+
+/* 左导航栏设置 */
+
+.container-2{
+    width: 230px;
+    height:100vh;
+    background: #27292b;
+    position:fixed;
+    color:#f3f3f4;
+    box-shadow:
+  3.2px 0px 3.8px rgba(0, 0, 0, 0.016),
+  8.9px 0px 10.4px rgba(0, 0, 0, 0.05),
+  21.4px 0px 25px rgba(0, 0, 0, 0.073),
+  71px 0px 83px rgba(0, 0, 0, 0.08)
+;
+}
+
+
+
+.title{
+    margin:15px 7px;
+    font-size:19px;
+}
+.line{
+    margin-top: 10px;
+    width: 180px;
+    height:3px;
+    background-color: #f3f3f4;
+}
+.catalogue{
+    padding-top:23px;
+    width: 230px;
+    
+}
+.catalogue a{
+    display: block;
+    margin:0px 0px;
+    text-decoration:none;
+    color:#e7e7e8;
+    font-weight: 550;
+    font-size:15px;
+    padding:15px 60px;
+    /* 设置字体间距 */
+    letter-spacing:4px;
+}
+.catalogue a.module-1{
+    background:#393c3f;
+}
+.catalogue a:hover{
+    background:#393c3f;
+}
+
+
+
+/* 正文 */
+
+#main{
+    overflow:hidden;
+    width:100%;
+    height:120vh;
+    padding-top: 90px;
+    padding-left: 224px;
+    /* background:#76c1fc; */
+    
+
+}
+.container-3{
+    background:#fff;
+    height:670px;
+    width:1165px;
+    margin:8px auto;
+    overflow: hidden;
+    box-shadow:
+    0px 0px 1.9px -39px rgba(0, 0, 0, 0.111),
+    0px 0px 4.4px -39px rgba(0, 0, 0, 0.174),
+    0px 0px 7.9px -39px rgba(0, 0, 0, 0.22),
+    0px 0px 13.2px -39px rgba(0, 0, 0, 0.261),
+    0px 0px 21.7px -39px rgba(0, 0, 0, 0.304),
+    0px 0px 37.9px -39px rgba(0, 0, 0, 0.363),
+    0px 0px 82px -39px rgba(0, 0, 0, 0.5)
+  ;
+}
+
+    /* 提交框 */
+.container-3 .search{
+    width: 600px;
+    height:50px;
+    /* background:red; */
+    margin-left:60px;
+    margin-top:40px;
+    font-weight: 550;
+    overflow: hidden;
+}
+.container-3 .search input.value-1{
+    height:30px;
+    width: 170px;
+}
+.container-3 .search label{
+    margin-left:10px;
+}
+.container-3 .search  select{
+    height:30px;
+    background:none;
+    color: #393c3f;
+}
+.container-3 .search input.btn-1{
+    width:80px;
+    background:#76c1fc;
+    border:none;
+    padding:10px 10px;
+    color:#FFF;
+    font-weight: 550;
+    margin-left:14px;
+}
+.container-3 .search input.btn-1:hover{
+    background:#a4d5fa;
+}
+
+    /* 添加成绩内容 */
+.container-3  .xueke{
+    width: 1110px;
+    height:520px;
+    /* background:red; */
+    margin-left:25px;
+    padding: 0px 100px;
+    overflow: hidden;
+}
+
+
+.xueke-1 input,
+.xueke-2 input{
+    height:27px;
+    width: 180px;
+    margin-top:30px;
+}
+.xueke-1{
+    width:250px;
+    height:200px;
+    /* background:#fff; */
+    float:left;
+    margin-right:10px;
+}
+.xueke-2{
+    width:250px;
+    height:200px;
+    /* background:#76c1fc; */
+    float:left;
+}
+.xueke-3{
+    width:600px;
+    height:300px;
+    margin-top: 110px;
+    float:left;
+    margin-left:280px;
+}
+.xueke-3 input{
+    padding: 10px 30px;
+    margin-right:10px;
+    font-weight: 550;
+    border: none;
+}
+
+.btn-1{
+        background:#76c1fc;
+        color:#FFF;
+}
+.btn-1:hover{
+    opacity: 0.8;
+}
+.btn-2{
+    color:#333;
+}
+.btn-2:hover{
+    opacity: 0.8;
+}
+
+
+/* 定义响应式布局 */
+    /* 利用媒体查询到分辨率进行调整 */
+    @media (min-width:1650px){
+        #main{
+            padding-top:140px; 
+            padding-left: 0px;
+        }
+    
+    }
+
+
+
+
+
+

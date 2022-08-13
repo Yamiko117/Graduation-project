@@ -1,0 +1,437 @@
+/* 全局样式 */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html,body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7em;
+    background: url(../image/背景.png) no-repeat center center/cover;
+    min-height:136vh;
+    position:relative;
+
+}
+
+
+
+/* 导航栏定义 */
+#navbar{
+        /* 设置盒子的底色和透明度 */
+    background-color: rgba(255,255,255,0.8);
+    color:#434343;
+    overflow: auto;
+    padding-top: 2px; 
+    width:100%;
+    /* 固定住导航栏 */
+    position:fixed;
+    box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.34);
+   
+}
+
+.container{
+    margin:0 auto;
+    height: 50px;
+    overflow:hidden;
+    padding: 10px;    
+}
+
+#navbar .container h1{
+    float:left;
+    padding-left: 50px ;
+
+}
+    /* 定义设置 */
+#navbar .container a{
+    display:block;
+    float: right;
+    margin-right: -150px ;
+    
+}
+#navbar .container h3{
+    float:right;
+    color:#434343;
+    margin-right: 50px ;
+
+}
+    /* 定义导航栏头像大小 */
+#navbar .container img{
+    display:block;
+    width: 45px;
+    height: 45px;
+    margin-top:-9px;
+    margin-right:9px;
+    float: right;
+    border-radius: 50%;
+}
+   /* 定义菜单栏 */
+.menu{
+    position:fixed;
+    top:  6px;
+    right:50px;
+    z-index: 1;
+}
+.menu .toggler{
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    /* 设置鼠标样式 */
+    cursor:pointer;
+    width:40px;
+    height:40px;
+    opacity: 0;
+}
+.menu .hamburger{
+    position:absolute;
+    top: 0;
+    left:0;
+    z-index:1;
+    width:28px;
+    height:40px;
+
+    /* 设置为弹性*/
+    display: flex;
+    /* 水平轴方向的居中 */
+    justify-content:center;
+    /* 垂直轴居中排列 */
+    align-items: center;
+}
+        /* 选择它的下一级子集 */
+.menu .hamburger > div{
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transition: all 0.4s ease;
+}
+
+    /* 设置线  利用两个伪元素添加上下两条线*/
+.menu .hamburger > div:before,
+.menu .hamburger > div:after{
+    /* 使用伪元素必须的属性 */
+    content: '';
+    position: absolute;
+    z-index: 1;
+    background: #333;
+    width: 100%;
+    height: 2px;
+    top: -10px;
+}
+.menu .hamburger > div:after{
+    top: 10px;
+}
+
+    /* 设置线的动漫  当我们点击到toggler 就会影响到它同级的元素hamburger中的div*/
+.menu .toggler:checked + .hamburger > div {
+    transform:rotate(135deg)
+}
+.menu .toggler:checked + .hamburger > div:before,
+.menu .toggler:checked + .hamburger > div:after{
+    /* 其实就是把他们起始位置弄成一致，这样它又变才一条线了,最终旋转形成一个x字形 */
+    top: 0;
+    transform: rotate(90deg);
+}
+.menu .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+}
+    /* 下拉框内容 */
+.menu .toggler:checked ~.menu-2{
+    visibility:visible;
+}
+.menu .menu-2{
+    position:absolute;
+    top: 50px;
+    right: -40px;
+    width: 100px;
+    height: 110px;
+    visibility: hidden;
+    /* background:red; */
+
+}
+.menu .menu-2 a{
+    text-decoration: none;
+    color:#333;
+    padding: 10px 40px;
+    background:#eef0f1;
+}
+.menu .menu-2 a:hover{
+    color:#FFF;
+    background:#76c1fc;
+}
+.menu .menu-2 a.back{
+    /* 设置两个圆角 */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.menu .menu-2  ul{
+    list-style:none;
+    position:absolute;
+    right: 75px;
+    top:-22px;
+}
+.menu .menu-2  ul li ul li{
+padding-top: 40px;
+}
+
+
+/* 定义正文 */
+#home-info{
+    margin:0 auto;
+    width:1500px;
+    overflow:hidden;
+    padding: 45px 50px;
+    padding-top: 100px;
+}
+#home-info .info-1{
+    width:500px;
+    height:745px;
+    background: rgba(255,255,255,0.9);
+    border-radius:10px;
+    float:left;
+    padding-top:20px;
+    line-height:40px;
+    box-shadow:
+  0px 0px 2.7px -1px rgba(0, 0, 0, 0.024),
+  0px 0px 6.9px -1px rgba(0, 0, 0, 0.044),
+  0px 0px 14.2px -1px rgba(0, 0, 0, 0.063),
+  0px 0px 29.2px -1px rgba(0, 0, 0, 0.081),
+  0px 0px 80px -1px rgba(0, 0, 0, 0.1)
+;
+}
+  /*个人信息上部分  */
+#home-info .info-1 .info-1-1{
+    overflow:hidden;
+}
+#home-info .info-1 img{
+    display: block; 
+    margin-left: 30px;
+    margin-top: 10px;
+    width:168px;
+    width:168px;
+    border-radius: 50%;
+    float:left;
+    
+}
+#home-info .info-1 .name,
+#home-info .info-1 .class,
+#home-info .info-1 .student-number{
+        margin-top:  20px;
+        border-bottom-style:solid ;
+        border-bottom-color:#616161;
+        text-align: center;
+        color:#616161;
+        float:right;
+        width: 250px;
+        margin-right:30px ;
+        margin-top:10px ;
+        
+}
+  /* 个人信息下半部分(成绩排名) */
+#home-info .info-1 .info-1-2{
+    color:#616161;
+    margin-top: 50px;
+    text-align: center;
+} 
+#home-info .info-1 .info-1-2 h2{
+    color:#76c1fc;
+    /* 设置字体的间距 */
+    letter-spacing:7px
+}
+#home-info .info-1 .info-1-2 p{
+    /* 以单词的进行字体的间距 */
+    word-spacing:90px;
+    margin-top: 30px;  
+}
+#home-info .info-1 .info-1-2 .title{
+    font-size:16px;
+    font-weight: 800;
+    word-spacing:120px;
+}
+#home-info .info-1 .info-1-2 .my{
+    font-size:14px;
+    font-weight: 800;
+}
+/* 成绩 */
+#home-info .info-2{
+    width:850px;
+    height:350px;
+    background: rgba(255,255,255,0.9);
+    border-radius:10px;
+    float:right;
+    overflow:hidden;
+    box-shadow:
+  0px 0px 2.7px -1px rgba(0, 0, 0, 0.024),
+  0px 0px 6.9px -1px rgba(0, 0, 0, 0.044),
+  0px 0px 14.2px -1px rgba(0, 0, 0, 0.063),
+  0px 0px 29.2px -1px rgba(0, 0, 0, 0.081),
+  0px 0px 80px -1px rgba(0, 0, 0, 0.1)
+;
+}
+#home-info  .info-2 .info-2-top{
+    height:25%;
+    width:100%;
+    /* background-color:red; */
+    padding-top:25px;
+}
+#home-info  .info-2 .info-2-top h1{
+    float:left;
+    color:#76c1fc;
+    padding-left:50px;
+    
+}
+#home-info  .info-2 .info-2-top select{
+    width:120px;
+    height:35px;
+    margin-right:180px;
+    float:right;
+    
+}
+#home-info  .info-2 .info-2-top  input{
+    width:70px;
+    height:35px;
+    margin-right:-213px;
+    float:right;
+    color:#fff;
+    background-color:#76c1fc;
+    border: none;
+    border-radius:4px;
+    font-size:16px;
+}
+#home-info  .info-2 .info-2-top  input:hover{
+    opacity:0.8;
+}
+#home-info  .info-2 .info-2-bottom{
+    height:75%;
+    width:100%;
+    color:#616161;
+    overflow:Hidden;
+    padding:5px 120px;
+}
+#home-info   .info-2 .info-2-bottom .xianzhi{
+    /* background:red; */
+    width: 700px;
+    height:250px;
+    overflow:Hidden;
+}
+#home-info   .info-2 .info-2-bottom .info-2-left{
+    /* background:green; */
+    float:left;
+    margin-left:50px;
+    line-height:2.2;
+    /* 以空格为单词的边距 */
+    word-spacing:70px;
+}
+#home-info   .info-2 .info-2-bottom .info-2-right{
+    /* background:coral; */
+    float:right;
+    margin-right:150px;
+    line-height:2.2;
+    word-spacing:70px;
+}
+#home-info   .info-2 .info-2-bottom h2{
+    font-size:21px;
+}
+/* 折线图 */
+
+.info-3  a.btn-2{
+    display:block;
+    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background:#76c1fc;
+    color:#fff;
+    width:70px;
+    height:40px;
+    padding-top: 5px;
+    padding-top:10;
+    text-align: center;
+    border-radius:12%;
+    text-decoration: none;
+}
+.info-3  a.btn-2:hover{
+    background:#f9df09;
+    color:#333;    
+}
+.info-3  a.btn-3{
+    /* bolor */
+    margin-left:80px;
+    /* margin-top:-20px; */
+    text-decoration: none;
+    display:block;
+}
+
+#home-info .info-3{
+    width:850px;
+    height:350px;
+    background: rgba(255,255,255,0.9);
+    margin-top:45px;
+    border-radius:10px;
+    /* padding-top: 20px; */
+    float:right;
+    box-shadow:
+  0px 0px 2.7px -1px rgba(0, 0, 0, 0.024),
+  0px 0px 6.9px -1px rgba(0, 0, 0, 0.044),
+  0px 0px 14.2px -1px rgba(0, 0, 0, 0.063),
+  0px 0px 29.2px -1px rgba(0, 0, 0, 0.081),
+  0px 0px 80px -1px rgba(0, 0, 0, 0.1)
+;
+}
+
+   /* 实现课程页面切换 */
+#home-info .info-3 .neir{
+overflow: hidden;
+    /* 平行滑动 */
+scroll-behavior: smooth;
+height: 90%;
+margin-top:20px;
+width:15%;
+/* background:red; */
+float:left;
+}
+    /* 折线图的页面切换 */
+.info-3 .zexiantu{
+    overflow:hidden;
+    height: 100%;
+    float:right;
+    width:85%;
+    /* background:red; */
+}
+.info-3 .zexiantu h2{
+    color:#76c1fc;
+    float:right;
+    font-size: 21px;
+    writing-mode:vertical-rl;
+    padding-top:75px ;
+    padding-right:30px ;
+    /* 字体边距 */
+    letter-spacing:3px;
+
+}
+.info-3 .zexiantu h2 span{
+    color:#f4cb0b;
+}
+
+/* 页尾 */
+#main-footer{
+    /* max-width:1600px; */
+    height:60px;
+    width: 100%;
+    background:rgba(51,51,51,0.9);
+    padding-top:17px;
+
+    text-align: center;
+    color:white;
+    position:absolute;
+    bottom:0;
+}
+
+
+/* 定义响应式布局 */
+    /*利用媒体查询当分辨率宽度到达1650时触发修改样式  */
+    @media (min-width:1650px){
+        html,body{
+            min-height:100vh;
+        }
+    }

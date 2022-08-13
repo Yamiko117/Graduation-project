@@ -1,0 +1,342 @@
+/* 全局样式 */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html,body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7em;
+    background: #f3f3f3;
+    position:relative;
+    min-height:113vh;
+    
+}
+
+/* 通用样式 */
+.container{
+    margin:0 auto;
+    height: 50px;
+    overflow:hidden;
+    padding: 10px;
+   
+}
+.input{
+    /* 清除点击后的边框样式 */
+   outline: none ;
+   border-style:none;
+   background:none;
+   font-size: 15px;
+   color:#333;
+    width:300px;
+   border-bottom-style:solid ;
+   border-bottom-color:#939292;
+   margin: 12px 0;
+}
+label{
+    font-size:14px;
+    font-weight: 550;
+    padding-left:20px;
+}
+/* 分界线  */
+.line{
+    width:95%;
+    padding-top: 10px;
+    padding-left: 430px;
+    border-bottom: #515151 3px solid;
+}
+
+
+
+/* 导航栏定义 */
+#navbar{
+    /* 设置盒子的底色和透明度 */
+background-color: rgba(255,255,255,0.8);
+color:#434343;
+overflow: auto;
+padding-top: 2px; 
+width:100%;
+/* 固定住导航栏 */
+position:fixed;
+box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.34);
+
+}
+
+.container{
+margin:0 auto;
+height: 50px;
+overflow:hidden;
+padding: 10px;    
+}
+
+#navbar .container h1{
+float:left;
+padding-left: 50px ;
+
+}
+/* 定义设置 */
+#navbar .container a{
+display:block;
+float: right;
+margin-right: -150px ;
+
+}
+#navbar .container h3{
+float:right;
+color:#434343;
+margin-right: 50px ;
+
+}
+/* 定义导航栏头像大小 */
+#navbar .container img{
+display:block;
+width: 45px;
+height: 45px;
+margin-top:-9px;
+margin-right:9px;
+float: right;
+border-radius: 50%;
+}
+/* 定义菜单栏 */
+.menu{
+position:fixed;
+top:  6px;
+right:50px;
+z-index: 1;
+}
+.menu .toggler{
+position:absolute;
+top:0;
+left:0;
+z-index: 2;
+/* 设置鼠标样式 */
+cursor:pointer;
+width:40px;
+height:40px;
+opacity: 0;
+}
+.menu .hamburger{
+position:absolute;
+top: 0;
+left:0;
+z-index:1;
+width:28px;
+height:40px;
+
+/* 设置为弹性*/
+display: flex;
+/* 水平轴方向的居中 */
+justify-content:center;
+/* 垂直轴居中排列 */
+align-items: center;
+}
+    /* 选择它的下一级子集 */
+.menu .hamburger > div{
+position: relative;
+flex: none;
+width: 100%;
+height: 2px;
+background: #333;
+transition: all 0.4s ease;
+}
+
+/* 设置线  利用两个伪元素添加上下两条线*/
+.menu .hamburger > div:before,
+.menu .hamburger > div:after{
+/* 使用伪元素必须的属性 */
+content: '';
+position: absolute;
+z-index: 1;
+background: #333;
+width: 100%;
+height: 2px;
+top: -10px;
+}
+.menu .hamburger > div:after{
+top: 10px;
+}
+
+/* 设置线的动漫  当我们点击到toggler 就会影响到它同级的元素hamburger中的div*/
+.menu .toggler:checked + .hamburger > div {
+transform:rotate(135deg)
+}
+.menu .toggler:checked + .hamburger > div:before,
+.menu .toggler:checked + .hamburger > div:after{
+/* 其实就是把他们起始位置弄成一致，这样它又变才一条线了,最终旋转形成一个x字形 */
+top: 0;
+transform: rotate(90deg);
+}
+.menu .toggler:checked:hover + .hamburger > div{
+transform: rotate(225deg);
+}
+/* 下拉框内容 */
+.menu .toggler:checked ~.menu-2{
+visibility:visible;
+}
+.menu .menu-2{
+position:absolute;
+top: 50px;
+right: -40px;
+width: 100px;
+height: 110px;
+visibility: hidden;
+/* background:red; */
+
+}
+.menu .menu-2 a{
+text-decoration: none;
+color:#333;
+padding: 10px 40px;
+background:#eef0f1;
+}
+.menu .menu-2 a:hover{
+color:#FFF;
+background:#76c1fc;
+}
+.menu .menu-2 a.back{
+/* 设置两个圆角 */
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.menu .menu-2  ul{
+list-style:none;
+position:absolute;
+right: 75px;
+top:-22px;
+}
+.menu .menu-2  ul li ul li{
+padding-top: 40px;
+}
+
+
+
+/* 正文 */
+#information{
+    width: 1520px;
+    height:700px;
+    padding:0px 200px;
+    margin:0 auto;
+    margin-bottom: 20px;
+    padding-top:75px;
+    color:#515151;
+
+}
+.container-2{
+    height:100%;
+    background:#FFF;
+    overflow: hidden;
+    box-shadow:
+    0px 0px 1.9px rgba(0, 0, 0, 0.053),
+    0px 0px 9.8px rgba(0, 0, 0, 0.077),
+    0px 0px 32px rgba(0, 0, 0, 0.13)
+  ;
+}
+.container-2 h1{
+    color:#76c1fc;
+
+}
+
+
+    /* 个人信息 */
+#information .info-1{
+    width:35%;
+    height:100%;
+    background:#f8f8f8;
+    overflow: hidden;
+    float:left;
+    border-right:#cccaca 1px solid;
+
+}
+#information .info-1 img{
+    display: block; 
+    margin-left: 75px;
+    margin-top: 60px;
+    width:250px;
+    width:250px;
+    
+}
+#information  .info-1 .name,
+#information  .info-1 .class,
+#information  .info-1 .student-number{
+        margin-top:  20px;
+        border-bottom-style:solid;
+        border-bottom-width: 3px;
+        border-bottom-color:#515151;
+        text-align: center;
+        width: 250px;
+        margin-left:70px ;
+        margin-top:20px ;
+        
+}
+
+    /* 个人信息修改 */
+.info-2{
+    width: 65%;
+    height:55%;
+    float:right;
+    background:#fff;
+    padding-left:40px;
+    padding-top: 20px;
+}
+     /*谷歌浏览器的输入框内字体的颜色 */
+.info-2 input::-webkit-input-placeholder{
+    color: #333;
+}
+
+.personal-info-6{
+    margin-top: 20px;
+    margin-left:80px;
+}
+.personal-info-6 #btn-1,
+.personal-info-6 #btn-2{
+    background:#1fadfa;
+    margin-right:30px;
+    width:77px;
+    padding: 7px 25px;
+    color:white;
+    border-radius:2px;
+    border:none;
+}
+.personal-info-6 #btn-1:hover{
+    opacity:0.8;
+}
+.personal-info-6 #btn-2{
+    background:#8b8b8b;
+}
+.personal-info-6 #btn-2:hover{
+    opacity:0.8;
+}
+
+    /* 密码修改 */
+.info-3{
+    width: 65%;
+    height:45%;
+    background:#FFF;
+    float:right;
+    padding-left:40px;
+    padding-top: 30px;
+    /* border:#333 1px solid; */
+}
+
+
+
+/* 页尾 */
+#main-footer{
+    height:64px;
+    background:rgba(51,51,51,0.9);
+    padding-top:17px;
+    text-align: center;
+    color:white;
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    margin-top:100px;
+}
+
+
+/* 定义响应式布局 */
+@media (min-width:1650px){
+    html,body{
+        min-height:100vh;
+    }
+}

@@ -1,0 +1,210 @@
+/* 全局配置 */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+    /* 设置背景，设置图片分100分来显示，最大宽度和最小宽度设置，以防缩放比例的大幅度变动 */
+body{
+    background: url(../image/背景.png) no-repeat center center/cover;
+    min-height: 100vh;
+    /* max-width:3888px; */
+    /* max-width:3888px; */
+    min-width:100vh;
+    /* min-width:1750px; */
+
+}
+/* 登录框布局设置 */
+#container{
+    margin: 45px auto;
+    width: 1256px;
+    height:600px;
+    padding: 0px 232px;
+    padding-top:110px;
+    background: url(../image/登录框.png) no-repeat center center/cover;
+}
+
+
+
+
+/* 通用样式 */
+    /* 实现隐藏边框，显示下边框，设置边框颜色  及内边距和外边距的效果*/
+input{
+     /* 清除点击后的边框样式 */
+    outline: none ;
+    border-style:none;
+    border-bottom-style:solid ;
+    border-bottom-color:#2daefc;
+    margin: 10px 0;
+    padding:7px 0;
+}
+    /* 鼠标悬停后输入框变化 */
+input:hover{
+    border-bottom-color:#f6cb02;
+}
+
+    /* 设置标题的文字样式 */
+h1{
+    color:#16a0eb;
+    padding-left:50px;
+    padding-bottom:30px;
+}
+    /* 清除下划线，设置颜色 */
+a {
+    text-decoration: none;
+    color:rgb(53, 54, 54);
+    }
+    /* 设置a标签点击后的样式 */
+a:hover{
+    color:#28b1fc;
+    font-size:17px;
+}
+/* "密码返回和注册页面使用"实现返回按钮的设置，由于a表示是行内元素需要转成快元素。 */
+.zhuce a.back{
+    display:block;
+    margin-left: 420px;
+    margin-top: -20px;
+    color:#2daefc;
+}
+
+
+
+/* 其它设置 */
+.login{
+    width:300px;
+    height:330px;
+    /* background:red; */
+    /* margin-top:-70px; */
+}
+
+    /* 设置部分输入框的宽度 */
+.login-1 input{
+    width:300px;
+    /* 设置验证码的宽度以及设置浮动 */
+}
+.login-2 input{
+    width:120px;
+    float:left;
+}
+    /* 设置验证码图片的类型,先把它转为块级元素，设置边距，设置浮动 */
+.login-2 img,
+.zhuce-4 img{
+    display: block;
+    margin-left: 10px;
+    margin-top: 5px;
+    float:left;
+}
+    /* 设置登录按钮的样式 */
+button{
+    display:block;
+    width:300px;
+    padding:10px;
+    margin-top:10px;
+    background:#1fadfa;
+    border:none;
+    color:white;
+    border-radius: 7px;
+    margin-bottom: 15px;
+}
+
+    /* 点击后的样式 */
+button:hover{
+    transition: all 0.3s ease;
+    background:#58c2fc;
+    
+}
+    /* 设置用户注册和忘记密码的盒子设置 */
+.login-4{   
+    width:320px;
+
+}
+    /* 设置浮动 */
+.login-5{
+    float:left;
+    /* padding-left:10px; */
+}
+.login-6{
+    float:left;
+    padding-left:10px;
+}
+    /*  设置"记住我"样式  */
+.login-4 .jzw{
+    margin-left: 88px;
+    margin-top:-6px; 
+    float:left;
+    color:rgb(53, 54, 54);
+}
+
+/* 注册页面设置 */
+#container .zhuce{
+    margin-top: -50px;
+}
+   /* 修改input款的边距 */
+.zhuce-1 input{
+    margin: 3px 0;
+    padding:6px 0;
+}
+   /* 修改部分input款的样式 */
+.zhuce-1 input{
+    width:300px;
+}
+    /*修改验证码和姓名的宽度以及浮动  */
+.zhuce-2 input,
+.zhuce-4 input{
+    width:120px;
+    float:left;
+}
+    /* 清除头像的冲突边框样式 */
+.zhuce-3 input{
+    border-style:none;
+}
+.zhuce-3{
+    color:#333;
+    font-size:15px;
+}
+    /* 设置注册按钮样式 */
+.zhuce-5 button{
+    width:190px;
+    float:left;
+}
+    /* 设置重置按钮设置 */
+.zhuce-6 button{
+    margin-left: 10px;
+    width:100px;
+    float:left;
+    background:#f9df08;
+}
+.zhuce-6 button:hover{
+    background:#fae526;
+}
+    /* 修改"注册"字体的样式 */
+.h1-2{
+    padding-left:117px;
+    padding-bottom:10px;
+}
+
+/* 密码找回页面 */
+    /* 修改"密码找回"字体的样式 */
+.h1-3{
+    padding-left:89px;
+    padding-bottom:20px;
+}
+    /* 修改 input标签的距离 */
+.password-back input{
+    margin: 3px 0;
+    padding:10px 0;
+}
+.password-back-name input{
+    width:300px;
+}
+
+
+
+
+/* 定义响应是布局 */
+@media (min-width:1650px){
+    #container{
+        margin-top:220px;
+    }
+}

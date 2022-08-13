@@ -1,0 +1,516 @@
+
+
+/* 全局样式 */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html,body{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.7em;
+    background-color:#e8eaef;  
+    height:107vh;
+    
+}
+
+
+/* 通用样式 */
+.container{
+    margin:0 auto;
+    height: 55px;
+    overflow:hidden;
+    padding: 10px;
+
+}
+
+
+/* 导航栏定义 */
+#navbar{
+    /* 设置盒子的底色和透明度 */
+background-color: rgba(255,255,255,0.9);
+color:#333;
+overflow: auto;
+width:100%;
+/* 固定住导航栏 */
+position:fixed;
+box-shadow: 3px 1px 10px rgba(0, 0, 0, 0.111) ;
+
+}
+
+
+
+/* 定义设置 */
+#navbar .container a{
+display:block;
+float: right;
+margin-right: -150px ;
+
+}
+#navbar .container h3{
+float:right;
+margin-right: 70px ;
+margin-top: 5px;
+
+}
+/* 定义导航栏头像大小 */
+#navbar .container img{
+display:block;
+width: 45px;
+height: 45px;
+margin-top:-4px;
+margin-right:9px;
+float: right;
+border-radius: 50%;
+}
+/* 定义菜单栏 */
+.menu{
+position:fixed;
+top:  9px;
+right:53px;
+z-index: 1;
+}
+.menu .toggler{
+position:absolute;
+top:0;
+left:0;
+z-index: 2;
+/* 设置鼠标样式 */
+cursor:pointer;
+width:40px;
+height:40px;
+opacity: 0;
+}
+.menu .hamburger{
+position:absolute;
+top: 0;
+left:0;
+z-index:1;
+width:30px;
+height:40px;
+/* background:rgba(13, 110, 139, 0.75); */
+display: flex;
+justify-content:center;
+align-items: center;
+}
+.menu .hamburger > div{
+position: relative;
+flex: none;
+width: 100%;
+height: 2px;
+background: #333;
+transition: all 0.4s ease;
+}
+
+/* 设置线 */
+.menu .hamburger > div:before,
+.menu .hamburger > div:after{
+content: '';
+position: absolute;
+z-index: 1;
+background: #333;
+width: 100%;
+height: 2px;
+top: -10px;
+}
+.menu .hamburger > div:after{
+top: 10px;
+}
+
+/* 设置线的动漫  当我们点击到toggler 就会影响到它同级的元素hamburger中的div*/
+.menu .toggler:checked + .hamburger > div {
+    transform:rotate(135deg)
+    }
+    .menu .toggler:checked + .hamburger > div:before,
+    .menu .toggler:checked + .hamburger > div:after{
+    /* 其实就是把他们起始位置弄成一致，这样它又变才一条线了,最终旋转形成一个x字形 */
+    top: 0;
+    transform: rotate(90deg);
+    }
+    .menu .toggler:checked:hover + .hamburger > div{
+    transform: rotate(225deg);
+    }
+/* 下拉框内容 */
+.menu .toggler:checked ~.menu-2{
+visibility:visible;
+}
+.menu .menu-2{
+position:absolute;
+top: 50px;
+right: -40px;
+width: 100px;
+height: 110px;
+visibility: hidden;
+/* background:red; */
+
+}
+.menu .menu-2 a{
+text-decoration: none;
+color:#333;
+padding: 10px 40px;
+background:#eef0f1;
+}
+.menu .menu-2 a:hover{
+color:#FFF;
+background:#76c1fc;
+}
+.menu .menu-2 a.back{
+/* 设置两个圆角 */
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+.menu .menu-2  ul{
+list-style:none;
+position:absolute;
+right: 75px;
+top:-22px;
+}
+.menu .menu-2  ul li ul li{
+padding-top: 40px;
+}
+
+/* 左导航栏设置 */
+
+.container-2{
+    width: 230px;
+    height:100vh;
+    background: #27292b;
+    position:fixed;
+    color:#f3f3f4;
+    box-shadow:
+  3.2px 0px 3.8px rgba(0, 0, 0, 0.016),
+  8.9px 0px 10.4px rgba(0, 0, 0, 0.05),
+  21.4px 0px 25px rgba(0, 0, 0, 0.073),
+  71px 0px 83px rgba(0, 0, 0, 0.08)
+;
+}
+
+
+
+.title{
+    margin:15px 7px;
+    font-size:19px;
+}
+.line{
+    margin-top: 10px;
+    width: 180px;
+    height:3px;
+    background-color: #f3f3f4;
+}
+.catalogue{
+    padding-top:23px;
+    width: 230px;
+    
+}
+.catalogue a{
+    display: block;
+    margin:0px 0px;
+    text-decoration:none;
+    color:#e7e7e8;
+    font-weight: 550;
+    font-size:15px;
+    padding:15px 60px;
+    /* 设置字体间距 */
+    letter-spacing:4px;
+}
+.catalogue a.module-1{
+    background:#393c3f;
+}
+.catalogue a:hover{
+    background:#393c3f;
+}
+
+
+/* 正文 */
+
+#main{
+    overflow:hidden;
+    /* width:220vh;
+    height:120vh; */
+    width:100%;
+    height:120vh;
+    padding-top: 90px;
+    padding-left: 224px;
+    /* background:#76c1fc; */
+    /* position: relative; */
+    z-index: 10;
+    
+
+}
+.container-3{
+    background:#fff;
+    height:670px;
+    width:1165px;
+    margin:8px auto;
+    overflow: hidden;
+    box-shadow:
+    0px 0px 1.9px -39px rgba(0, 0, 0, 0.111),
+    0px 0px 4.4px -39px rgba(0, 0, 0, 0.174),
+    0px 0px 7.9px -39px rgba(0, 0, 0, 0.22),
+    0px 0px 13.2px -39px rgba(0, 0, 0, 0.261),
+    0px 0px 21.7px -39px rgba(0, 0, 0, 0.304),
+    0px 0px 37.9px -39px rgba(0, 0, 0, 0.363),
+    0px 0px 82px -39px rgba(0, 0, 0, 0.5)
+  ;
+}
+
+    /* 提交款 */
+.container-3 .search{
+    width: 1100px;
+    height:50px;
+    /* background:red; */
+    margin-left:40px;
+    margin-top:20px;
+    overflow: hidden;
+}
+.container-3 .search input.value-1{
+    height:30px;
+    width: 170px;
+    margin-left:14px;
+}
+.container-3 .search  select{
+    height:30px;
+    background:none;
+    margin-left:170px;
+    color: #393c3f;
+}
+.container-3 .search input.btn-1{
+    width:80px;
+    background:#76c1fc;
+    border:none;
+    padding:9px 10px;
+    color:#FFF;
+    font-weight: 550;
+    font-size:15px;
+    margin-left:14px;
+}
+.container-3 .search input.btn-1:hover{
+    background:#a4d5fa;
+}
+.container-3 .search h2{
+    margin-top:10px;
+    float:left;
+    margin-right:350px;
+    color:#404041;
+}
+
+
+    /* 搜寻结果内容 */
+.container-3  .result{
+    width: 1110px;
+    height:520px;
+    /* background:red; */
+    margin-left:25px;
+    position:relative;
+    top:0;
+    left:0;
+}
+
+
+
+.container-3  .result   .table{
+    width:1100px;
+    text-align: center;
+    color:#505050;
+    border: #a1a1a1 1px solid;
+}
+.container-3  .result td{
+    border: #a1a1a1 1px solid;
+    height:35px;
+
+}
+.container-3  .result td a{
+    text-decoration: none;
+}
+    /* 操作里面的按钮 */
+.btn-2,
+.btn-3{
+    padding:5px 10px;
+    background:#76c1fc;
+    color:#FFF;
+    border-radius:2px;
+    margin:0px -10px;
+    /* font-weight: 550;   */
+}
+.btn-2-2{
+    background:#b6b7b8;
+}
+.btn-3{
+    background:#e26249;
+    margin-left:15px;
+}
+.btn-2:hover,
+.btn-3:hover{
+    opacity: 0.83;
+}
+        /* 页码的调整 */
+.yema{
+    background:#fff;
+    position:absolute;
+    top:500px;
+    right:30px;
+    /* 以空格为调整边界 */
+    word-spacing:2px;
+}
+        /* 页码a标签样式 */
+.yema a{
+    /* text-decoration: none; */
+    color:#505050;
+}
+.yema a:hover{
+    color:#76c1fc;
+}
+
+        /* 表格标题 */
+.table-tr{
+    /* color:red; */
+    background:#f0f0f1;
+    height:40px;
+    font-weight:550;
+}
+
+
+
+
+
+
+    /* 修改信息的弹窗 */
+      /* 修改弹窗内容 */
+        /* 内容 */
+.container-4{
+    /* 设置默认隐藏 */
+    display: none;
+    position: fixed;
+    top:22%;
+    left:42%;
+    width: 320px;
+    height:340px;
+    background:#FFF;
+    color:#505050;
+    z-index: 3;
+    padding:20px 0px;
+    padding-left:65px;
+    border-radius: 15px;
+}
+
+        /* 弹窗背景 */
+.bcakground{
+    display: none;
+    position:absolute;
+    top:0;
+    width: 100%;
+    height: 122vh;
+    z-index: 2;
+    background-color: rgba(39, 41, 43, 0.815);
+}
+
+.container-4 .btn-4{
+    margin-top:11px;
+    margin-left: 35px;
+    padding:4px 15px;
+    border:none;
+    color:#FFF;
+    background:#76c1fc;
+    font-size:14px;
+}
+.container-4 .btn-4:hover,
+.container-4 .btn-5:hover{
+    opacity: 0.9;
+}
+
+
+.container-4 .btn-5{
+    margin-left: 10px;
+    padding:0px 15px;
+    border:none;
+    color:#FFF;
+    background:#b6b7b8;
+    text-decoration: none;
+    font-size:14px;
+    /* 把他转为行快类型 是为了解决会多显示方块bug */
+    display:inline-block;
+}
+.container-4  h4{
+    margin-top:-14px;
+    margin-bottom:7px;
+    margin-left:-7px;
+}
+      /* 删除弹框内容 */
+.container-5,
+.container-6{
+    position:fixed;
+    display: none;
+    top:30%;
+    left:43%;
+    width:320px;
+    height:140px;
+    background:#FFF;
+    display: block;
+    z-index: 3;
+    padding:20px 0px;
+    padding-left:65px;
+    padding-left:65px;
+    border-radius: 15px;
+
+}
+.container-6{
+    padding: 40px 83px;
+}
+.container-5 a,
+.container-6 a{
+    text-decoration:none;
+}
+.container-5 .delete{
+    margin:0px 27px;
+}
+.container-5  h4{
+    margin-bottom: 10px;
+    margin-top:-10px;
+    color:#484848;
+}
+.container-6  h4{
+    display:inline;
+    padding-top: 20px;
+    color:#484848;
+}
+
+
+
+
+
+
+/* 学生列表页面 */
+
+.container-3 .search input.value-1-student{
+    height:30px;
+    width: 170px;
+    margin-left:320px;
+}
+
+.AA{
+    padding-left: 50px;
+}
+
+.container-4  .btn-4-2{
+    margin-left: 50px;
+}
+
+.xiugai{
+    margin:10px 0px;
+}
+.xiugai input{
+    height:26px;
+}
+
+
+
+/* 定义响应式布局 */
+    /* 利用媒体查询到分辨率进行调整 */
+    @media (min-width:1650px){
+        #main{
+            padding-top:140px; 
+            padding-left: 0px;
+        }
+    
+    }
+    
